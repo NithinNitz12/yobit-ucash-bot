@@ -5,6 +5,10 @@ Trading bot that can buy UCASH on Yobit.net on this trading pair **UCASH/BTC**
 https://yobit.net/en/trade/UCASH/BTC
 
 ```
+# ***** For trading limit and market orders *****
+[Check out this README.md file](/samplecode/README.md)
+<hr>
+
 ### How it works
 User creates account on Yobit, funds account with BTC
 
