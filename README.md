@@ -6,7 +6,7 @@ https://yobit.net/en/trade/UCASH/BTC
 
 ```
 # ***** For trading limit and market orders *****
-[Check out this README.md file](/samplecode/README.md)
+[Check out this README.md file](/trading-limit-and-market/README.md)
 <hr>
 
 ### How it works
