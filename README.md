@@ -40,7 +40,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd yobit-ucash-bot/trading-limit-and-market
+  cd yobit-ucash-bot
 ```
 Create a `.env` file and insert your `API_KEY` and `API_SECRET`
 ```
