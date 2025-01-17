@@ -14,7 +14,14 @@ placeTrade('ucash_btc', 'buy', '0.00000002', '1111', 'limit');
 ```bash
 placeTrade("ucash_btc", "buy", null, "520", "market");
 ```
-
+## Buy X UCASH over the period of Y seconds
+```
+buyUcashOverTime(10000, 5); // Buy 10000 UCASH over 5 seconds
+```
+## Sell X UCASH over the period of Y seconds
+```
+sellUcashOverTime(10000, 5); // Sell 10000 UCASH over 5 seconds
+```
 # Run Locally
 Clone the project
 

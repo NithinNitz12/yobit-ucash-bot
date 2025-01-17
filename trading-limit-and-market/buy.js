@@ -68,6 +68,34 @@ async function placeTrade(pair, type, rate, amount, orderType) {
   }
 }
 
+// Helper function to create a delay
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+// Function to buy UCASH over time
+async function buyUcashOverTime(totalAmount, durationSeconds) {
+  const pair = 'ucash_btc';
+  const type = 'buy';
+  const orderType = 'market';
+  
+  const intervalMs = 1000; // Check every second
+  const iterations = durationSeconds;
+  const amountPerIteration = totalAmount / iterations;
+  
+  console.log(`Starting to buy ${totalAmount} UCASH over ${durationSeconds} seconds.`);
+  
+  for (let i = 0; i < iterations; i++) {
+    try {
+      await placeTrade(pair, type, null, amountPerIteration.toFixed(8), orderType);
+      console.log(`Iteration ${i + 1}: Bought ${amountPerIteration.toFixed(8)} UCASH`);
+    } catch (error) {
+      console.error(`Error in iteration ${i + 1}:`, error);
+    }
+    await delay(intervalMs);
+  }
+  
+  console.log(`Completed buying ${totalAmount} UCASH over ${durationSeconds} seconds.`);
+}
+
 //--------------------------- UNCOMMENT AND CHANGE VALUES FOR THE TRADE, EITHER LIMIT OR MARKET ORDER. ---------------------------\\
 
 // Limit order
@@ -77,3 +105,7 @@ async function placeTrade(pair, type, rate, amount, orderType) {
 // Market order
 // placeTrade(['trade_pair'], ['buy'], [null], [amount], ['market'])
 // placeTrade("ucash_btc", "buy", null, "520", "market");
+
+//--------------------------------------- TO BUY X AMOUNT OF UCASH OVER THE PERIOD OF Y SECONDS ---------------------------------------\\
+
+// buyUcashOverTime(10000, 5); // Buy 10000 UCASH over 5 seconds
